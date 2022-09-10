@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Stars from './stars/Stars';
+import Listing from './Listing/Listing';
+import data from './data/data.json'
 
-function App() {
+function App(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='task-1'>
+        <span className='task-title'>Задача №1. Рейтинг фильмов
+        </span>
+        <div>
+        <Stars count={1}/>
+        <Stars count={2}/>
+        <Stars count={3}/>
+        <Stars count={4}/>
+        <Stars count={5}/>
+        </div>
+      </div> 
+
+      <div className='task-2'>
+        <Listing items={data}/>
+      </div>
     </div>
   );
 }
