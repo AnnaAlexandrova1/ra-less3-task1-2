@@ -19,6 +19,10 @@ function App(){
       </div> 
 
       <div className='task-2'>
+      <span className='task-title'>Задача №2. Список предложений
+      </span>
+
+      
         <Listing items={data}/>
       </div>
     </div>

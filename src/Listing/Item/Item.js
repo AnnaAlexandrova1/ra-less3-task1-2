@@ -1,5 +1,7 @@
+import './Item.css'
+
 const Item = (props) => {
-    const {listing_id, url, MainImage, title, currency_code, price,  quantity} = props;
+    const {listing_id, url, MainImage, title, currency_code, price, quantity} = props;
 
     const drowPrice = (currency_codem, price) => {
         switch(currency_codem){
@@ -13,15 +15,17 @@ const Item = (props) => {
     }
 
     const drowLevel = (quantity) => {
-        switch(currency_code){
-            case quantity < 11:
-                return 'item-quantity level-low'
-            case quantity < 21 && quantity > 10:
-                return 'item-quantity level-medium'
-            case quantity > 20:
-                return 'item-quantity level-high'
-            default:
-                return 'item-quantity'
+        if(quantity < 11){
+            return 'item-quantity level-low'
+        }
+        if(quantity < 21 && quantity > 10){
+            return 'item-quantity level-medium'
+        }
+        if(quantity > 20){
+            return 'item-quantity level-high'
+        }
+        else {
+            return 'item-quantity'
         }
     }
 
@@ -44,7 +48,7 @@ const Item = (props) => {
             <div className="item-details">
             <p className="item-title">{drowTitle(title)}</p>
                 <p className="item-price">{drowPrice(currency_code, price)}</p>
-            <p className={drowLevel(quantity)}>{quantity}</p>
+            <p className={drowLevel(quantity)}>{quantity} left</p>
             </div>
             </div>
     )
