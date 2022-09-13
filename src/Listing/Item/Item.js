@@ -1,7 +1,7 @@
 import './Item.css'
 
 const Item = (props) => {
-    const {listing_id, url, MainImage, title, currency_code, price, quantity} = props;
+    const {listing_id, url, MainImage, title, currency_code, price, quantity} = props.item;
 
     const drowPrice = (currency_codem, price) => {
         switch(currency_codem){
